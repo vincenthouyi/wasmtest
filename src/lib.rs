@@ -17,3 +17,5 @@ extern "C" {
 pub fn greet() {
     alert("Hello, wasmtest aaa!");
 }
+
+mod base64_encoder_decoder;
