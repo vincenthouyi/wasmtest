@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./wasmtest/static/css/main.22941023.css",
-    "main.js": "./wasmtest/static/js/main.85a3970c.js",
-    "static/media/wasmtest_vincenthou_bg.wasm": "./wasmtest/static/media/wasmtest_vincenthou_bg.7dffbc8e6694473cb0c9.wasm",
-    "index.html": "./wasmtest/index.html",
-    "main.22941023.css.map": "./wasmtest/static/css/main.22941023.css.map",
-    "main.85a3970c.js.map": "./wasmtest/static/js/main.85a3970c.js.map"
+    "main.css": "/vincenthouyi.github.io/wasmtest/static/css/main.22941023.css",
+    "main.js": "/vincenthouyi.github.io/wasmtest/static/js/main.cfe16a1c.js",
+    "static/media/wasmtest_vincenthou_bg.wasm": "/vincenthouyi.github.io/wasmtest/static/media/wasmtest_vincenthou_bg.7dffbc8e6694473cb0c9.wasm",
+    "index.html": "/vincenthouyi.github.io/wasmtest/index.html",
+    "main.22941023.css.map": "/vincenthouyi.github.io/wasmtest/static/css/main.22941023.css.map",
+    "main.cfe16a1c.js.map": "/vincenthouyi.github.io/wasmtest/static/js/main.cfe16a1c.js.map"
   },
   "entrypoints": [
     "static/css/main.22941023.css",
-    "static/js/main.85a3970c.js"
+    "static/js/main.cfe16a1c.js"
   ]
 }
