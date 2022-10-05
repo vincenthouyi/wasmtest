@@ -7,13 +7,15 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import TickTackToe from './applets/tick_tack_toe';
-import Base64Encoder from './applets/base64_encoder';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
+
+import TickTackToe from './applets/tick_tack_toe';
+import Base64Encoder from './applets/base64_encoder';
+import Base64Decoder from './applets/base64_decoder';
 
 const applets = [
     {
@@ -25,6 +27,11 @@ const applets = [
         title: 'Base64 Encoder',
         component: <Base64Encoder />,
         path: 'base64_encoder'
+    },
+    {
+        title: 'Base64 Decoder',
+        component: <Base64Decoder />,
+        path: 'base64_decoder'
     }
 ]
 

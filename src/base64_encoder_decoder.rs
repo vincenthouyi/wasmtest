@@ -6,3 +6,10 @@ use wasm_bindgen::prelude::*;
 pub fn base64_encode(cleartext: String) -> String {
     encode(cleartext)
 }
+
+#[wasm_bindgen]
+pub fn base64_decode(encoded: String) -> String {
+    decode(encoded.as_bytes())
+        .map(|t| String::from_utf8(t).unwrap_or_else(|e| e.to_string()))
+        .unwrap_or_else(|e| e.to_string())
+}

@@ -1,22 +1,22 @@
 import React, { useRef } from 'react';
-import init, { base64_encode } from "wasmtest-vincenthou";
+import init, { base64_decode } from "wasmtest-vincenthou";
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
 
 init();
 
-function Base64EncoderInner(props) {
+function Base64DecoderInner(props) {
     const ref = useRef(null);
 
     return (
         <Stack>
             <Form>
                 <Form.Group>
-                    <Form.Label>Clear text</Form.Label>
+                    <Form.Label>Encoded Text</Form.Label>
                     <Form.Control
                         as="textarea"
-                        placeholder="cleartext"
+                        placeholder="encoded text"
                         rows={3}
                         ref={ref}
                     />
@@ -26,14 +26,14 @@ function Base64EncoderInner(props) {
                     type="button"
                     onClick={() => props.onClick(ref.current.value)}
                 >
-                    Encode
+                    Decode
                 </Button>
                 <Form.Group>
-                    <Form.Label>Encoded text</Form.Label>
+                    <Form.Label>Decoded Text</Form.Label>
                     <Form.Control
                         as="textarea"
                         rows={3}
-                        value={props.encoded}
+                        value={props.decoded}
                         readOnly
                     />
                 </Form.Group>
@@ -42,30 +42,30 @@ function Base64EncoderInner(props) {
     )
 }
 
-class Base64Encoder extends React.Component {
+class Base64Decoder extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            encoded: "",
+            decoded: "",
         }
     }
 
-    doBase64Encode(cleartext) {
-        const encoded = base64_encode(cleartext)
+    doBase64Decode(cleartext) {
+        const decoded = base64_decode(cleartext)
         this.setState(
             {
-                encoded: encoded
+                decoded: decoded
             }
         )
     }
 
     render() {
-        return <Base64EncoderInner
-            onClick={(cleartext) => this.doBase64Encode(cleartext)}
-            encoded={this.state.encoded}
+        return <Base64DecoderInner
+            onClick={(cleartext) => this.doBase64Decode(cleartext)}
+            decoded={this.state.decoded}
         />
     }
 }
 
-export default Base64Encoder;
+export default Base64Decoder;
