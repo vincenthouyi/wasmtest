@@ -9,6 +9,11 @@ import {
 } from "react-router-dom";
 import TickTackToe from './applets/tick_tack_toe';
 import Base64Encoder from './applets/base64_encoder';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const applets = [
     {
@@ -23,18 +28,22 @@ const applets = [
     }
 ]
 
+function Title() {
+    return <h1>WASM toolbox</h1>
+}
+
 function Menu() {
     const appletLinks = applets.map((applet) => {
         return (
-            <li key={applet.path}>
+            <ListGroup.Item key={applet.path}>
                 <Link to={applet.path}>{applet.title}</Link>
-            </li>
+            </ListGroup.Item>
         )
     });
     return (
-        <nav>
-            <ul> {appletLinks} </ul>
-        </nav>
+        <ListGroup>
+            {appletLinks}
+        </ListGroup>
     )
 }
 
@@ -49,10 +58,19 @@ export default function App() {
     })
 
     return (
-        <div>
-            <Menu />
-            <Routes> {appletRoutes} </Routes>
-        </div>
+        <Container>
+            <Row>
+                <Title />
+            </Row>
+            <Row>
+                <Col xs={3}>
+                    <Menu />
+                </Col>
+                <Col>
+                    <Routes> {appletRoutes} </Routes>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

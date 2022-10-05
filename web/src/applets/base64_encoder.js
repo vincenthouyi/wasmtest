@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import init, { base64_encode } from "wasmtest-vincenthou";
+import Button from 'react-bootstrap/Button';
+import Stack from 'react-bootstrap/Stack';
 
 init();
 
@@ -7,21 +9,21 @@ function Base64EncoderInner(props) {
     const ref = useRef(null);
 
     return (
-        <div>
-            <p>Clear text</p>
+        <Stack>
+            <h3>Clear text</h3>
             <textarea
                 ref={ref}
                 id="cleartext"
             ></textarea>
-            <button
+            <Button
                 onClick={() => props.onClick(ref.current.value)}
-            >Encode</button>
-            <p>Encoded text</p>
+            >Encode</Button>
+            <h3>Encoded text</h3>
             <textarea
                 value={props.encoded}
                 readOnly
             />
-        </div >
+        </Stack >
     )
 }
 
