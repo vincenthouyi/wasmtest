@@ -204,7 +204,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "wasmtest-vincenthou"
+name = "wasm-lib"
 version = "0.1.0"
 dependencies = [
  "base64",

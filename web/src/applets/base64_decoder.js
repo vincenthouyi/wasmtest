@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import init, { base64_decode } from "wasmtest-vincenthou";
+import init, { base64_decode } from "wasm-lib";
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
